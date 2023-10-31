@@ -1,0 +1,174 @@
+#:kivy 2.0.0
+
+<MyButton@Button>:
+    background_color: 0,0,0,0
+    background_normal: ''
+    background_down: ''
+    on_release: app.on_login_button_click()
+
+    canvas.before:
+        Color:
+            rgba: 0,0,0,1  # Background color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [18]  # Adjust the radius values for the desired curvature
+
+
+
+BoxLayout:
+    id: main_layout
+    orientation: 'horizontal'
+    canvas.before:
+        Color:
+            rgba: 4/255, 7/255, 30/255,  1
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        id: left_layout
+        orientation: 'vertical'
+        size_hint: .7, 1
+
+        Image:
+            source: './UI niyantranam.jpg'  # Replace with the path to your image
+            size: 400, 600
+            allow_stretch: True
+            keep_ratio: False
+
+    RelativeLayout:
+        id: right_layout
+        
+        
+        
+       
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: None, None
+            width: "470dp"
+            height: self.minimum_height
+            center_x: self.parent.center_x
+            top: self.parent.top - 10
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            spacing: 10 
+
+            # Additional BoxLayout for Labels, TextInputs, and Button
+            BoxLayout:
+                id: sub_layout
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                center_x: self.parent.center_x
+                padding: [10, 0]
+                spacing: 10  
+                
+                # canvas:
+                #     Rectangle:
+                #         source: './Grey Card.png'  # Use the same image as the background
+                #         size: self.size  # Cover the entire area
+                #         pos: self.pos  # Position the image at the layout's position
+                canvas.before:
+                    Color:
+                        rgba: 36/255, 29/255, 58/255,  1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [30, 30, 30, 30]
+                        # color: 1, 0, 0, 1
+                        # color: 0.7, 0.7, 0.7, 1
+                Label:
+                    text: 'WelCome to Niyantranam'
+                    size_hint: None, None
+                    size: "500dp", "30dp"
+                    font_size:24
+                    bold: True
+
+                Label:
+                    text: 'New member?Create a new account. Sign Up!'
+                    size_hint: None, None
+                    size: "500dp", "30dp"
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 30  # Adjust the height as needed
+                    center_x: self.parent.center_x
+                    padding: 33.5, 0
+                    spacing: 10 
+                    
+
+                    TextInput:
+                        id: first_name_input  # Add the ID
+                        hint_text: 'Firstname'
+                        size_hint: None, None
+                        size: 245, 40
+                        pos_hint: {'center_x': 0.5}
+                        font_size:20
+                        bold: True  # Adjust the width as needed
+                        hint_text_color: 1, 1, 1, 1
+                        background_color: 0, 0, 0, 1  # Fully transparent background
+                    TextInput:
+                        id: last_name_input  # Add the ID
+
+                        hint_text: 'Secondname'
+                        size_hint: None, None
+                        size: 245, 40
+                        pos_hint: {'center_x': 0.5}
+                        hint_text_color: 1, 1, 1, 1
+                        background_color: 0, 0, 0, 1
+                        font_size:20
+                        bold: True  # Adjust the width as needed
+
+                TextInput:
+                    id: organization_input
+                    hint_text: 'Organization/Institution'
+                    size_hint: None, None
+                    size: 500, 40
+                    pos_hint: {'center_x': 0.5}
+                    font_size:20
+                    bold: True
+                    hint_text_color: 1, 1, 1, 1
+                    background_color: 0, 0, 0, 1
+                    
+                TextInput:
+                    id: email_input
+                    hint_text: 'Email address'
+                    size_hint: None, None
+                    size: 500, 40
+                    pos_hint: {'center_x': 0.5}
+                    font_size:20
+                    bold: True
+                    hint_text_color: 1, 1, 1, 1
+                    background_color: 0, 0, 0, 1    
+                TextInput:
+                    id: password_input
+                    hint_text: 'Password'
+                    size_hint: None, None
+                    size: 500, 40
+                    pos_hint: {'center_x': 0.5}
+                    font_size:20
+                    bold: True
+                    hint_text_color: 1, 1, 1, 1
+                    background_color: 0, 0, 0, 1    
+                MyButton:
+                    text: 'LOGIN'
+                    size_hint: None, None
+                    size: 200, 40
+                    pos_hint: {'center_x': 0.5}
+                    font_size:20
+                    bold: True
+                     
+                    
+
+                Label:
+                    text: ''
+                    size_hint: None, None
+                    size: 200, 5
+                    pos_hint: {'center_x': 0.5}
+                    font_size:20
+                    bold: True
+
+                   
+
